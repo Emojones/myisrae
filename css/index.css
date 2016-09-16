@@ -1,0 +1,69 @@
+/************************
+GENERAL 
+************************/
+
+
+* {
+    font-family: sans-serif
+}
+
+.main-navBar li {
+    display: inline-block;
+    margin: 0% 6%;
+    text-align:center;
+}
+
+.missStatement{
+    text-align:center;
+    background: #3F4045;
+    padding: 1rem 12em;
+}
+
+
+
+
+
+.joinUs{
+    text-align: center;
+    padding: 1rem 12rem;
+}
+
+
+/************************
+HEADING 
+************************/
+
+.header{
+    text-align: center;
+    font-weight: 800;
+    padding: 4rem;
+}
+
+
+
+/************************
+FOOTER 
+************************/
+
+
+/************************
+COLORS 
+light grey: 929CA1
+dark grey: 3F4045
+organish brown: D3884E
+light skin: FBDEB2
+tan skin: ECC9A1
+************************/
+
+.missStatement{
+    color: white;
+}
+
+.joinUs{
+    color: white;
+    background: #D3884E;
+}
+
+
+
+
