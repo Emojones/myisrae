@@ -1,5 +1,5 @@
 $(window).load(function(){
-      $("#main-navBar").sticky({topSpacing: 0, center:true});
+      $("#sticker").sticky({topSpacing: 0, center:true, className:"main-navBar"});
     });
 
- $('#main-navBar').on('sticky-start', function() { console.log("Started"); });
+ $('#sticker').on('sticky-start', function() { console.log("Started"); });
