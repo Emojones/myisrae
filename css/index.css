@@ -2,27 +2,60 @@
 GENERAL 
 ************************/
 
-
-* {
-    font-family: sans-serif
+body {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  margin: 2rem 0rem;
+  text-decoration: none;
 }
+
+a {
+text-decoration:none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main-navBar {
+  padding: 1px;
+  background: white ;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
 
 .main-navBar li {
-    display: inline-block;
-    margin: 0% 6%;
-    text-align:center;
-}
-
-.missStatement{
-    text-align:center;
-    background: #3F4045;
-    padding: 1rem 12em;
+  display: inline-block;
+  margin: 0% 6%;
+  font-weight: 800;
 }
 
 
-.joinUs{
-    text-align: center;
-    padding: 1rem 12rem;
+.slides img{
+  display: inline-block;
+  text-align: center;
+}
+
+.missStatement {
+  padding: 1rem 12em;
+  margin: 71px 0px;
+}
+
+.bubbles div {
+  display: inline-block;
+  margin: 2rem;
+}
+
+.bubbles img {
+  border-radius: 200px;
+}
+
+.joinUs {
+  padding: 1rem 12rem;
 }
 
 
@@ -30,11 +63,24 @@ GENERAL
 HEADING 
 ************************/
 
-.header{
-    text-align: center;
-    font-weight: 800;
-    padding: 4rem;
+.header {
+  font-weight: 800;
+  padding: 14rem;
+  box-sizing: border-box;
+  background: black;
+  color: white
 }
+
+
+/************************
+STICKY BAR   
+************************/
+
+
+
+/************************
+CAROUSEL   
+************************/
 
 
 
@@ -43,24 +89,35 @@ FOOTER
 ************************/
 
 
+
 /************************
 COLORS 
 light grey: 929CA1
+blueish grey: 696969
 dark grey: 3F4045
 organish brown: D3884E
 light skin: FBDEB2
 tan skin: ECC9A1
+navy blueish: 001631
+greyish blue: 82919F
 ************************/
 
-.missStatement{
-    color: white;
+body {
+  background: #82919F;
 }
 
-.joinUs{
-    color: white;
-    background: #D3884E;
+.missStatement {
+  background: #3F4045;
+  color: white;
 }
 
+.missionTitle {
+  color: #D3884E;
+  font-weight: 600;
+}
 
-
-
+.joinUs {
+  color: #3F4045;
+  font-weight: 800;
+  background: #D3884E;
+}
