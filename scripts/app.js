@@ -9,7 +9,7 @@ $(window).load(function () {
 $(".slides").slick({
   fade: true,
   autoplay: true,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 3000,
   arrows: true,
   dots: true
 });

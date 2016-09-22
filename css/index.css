@@ -3,14 +3,10 @@ GENERAL
 ************************/
 
 body {
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   text-align: center;
-  margin: 2rem 0rem;
+  margin: 0;
   text-decoration: none;
-}
-
-a {
-text-decoration:none;
 }
 
 img {
@@ -37,7 +33,6 @@ nav ul {
 
 .slides img{
   display: inline-block;
-  text-align: center;
 }
 
 .missStatement {
