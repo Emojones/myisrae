@@ -1,5 +1,6 @@
 'use strict';
 
+//MODULES********************************************************************
 var express = require('express');
 var app = express();
 var parser = require('body-parser');
@@ -7,7 +8,7 @@ var parser = require('body-parser');
 
 
 
-//require('./database');
+require('./database');
 //require ('./seed');
 
 app.use('/', express.static('public'));
