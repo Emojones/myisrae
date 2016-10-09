@@ -1,0 +1,14 @@
+{
+  "name": "myisrae-mean",
+  "version": "1.0.0",
+  "description": "My take on a website for a non-profit ",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Christy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
