@@ -6,16 +6,22 @@ var app = express();
 var parser = require('body-parser');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/blog-posts')
+//import config files
+var db = require('../config/db');
 
-// define model =================
-var blogMongo = mongoose.model('blogPost', {
-    name: String,
-    body: String,
-});
+//connect to mongo
+mongoose.connect(db.url);
 
+//server these static files
 app.use('/', express.static('public'));
 
+//our routes
+require('../app/routes');
+
+//start the server and print out to the console
 app.listen(3000, function () {
     console.log("The server is running on port 3000");
 });
+
+//expose our app
+exports = module.exports = app;
