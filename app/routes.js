@@ -3,9 +3,9 @@ var Blog = require('./dbmodel');
 
 module.exports = function(app) {
   app.get('/api/blog', function(req, res) {
-             Blog.find(function(err, blog) {
+             Blog.find(function(err, blogs) {
                 if (err) res.send(err);
-                 res.json(blog);
+                 res.json(blogs);
              });
          });
 

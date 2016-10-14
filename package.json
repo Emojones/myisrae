@@ -12,7 +12,6 @@
     "angular": "^1.5.8",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "mongoose": "^4.6.3",
-    "bootstrap": "^3.3.7"
+    "mongoose": "^4.6.3"
   }
 }
