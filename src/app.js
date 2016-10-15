@@ -18,7 +18,7 @@ mongoose.connect(db.url, function(err){
 });
 
 //server these static files
-app.use('/', express.static('public'));
+app.use(express.static(__dirname+'/public'));
 app.use(parser.json());
 
 

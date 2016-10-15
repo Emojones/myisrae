@@ -1,5 +1,7 @@
 //import the dbmodel
 var Blog = require('./dbmodel');
+var path = require('path');
+
 
 //backend routes############################################
 module.exports = function(app) {
@@ -18,6 +20,6 @@ module.exports = function(app) {
 //frontend routes################################################
 //route to handle all angular requests
 app.get('*', function(req, res) {
-res.sendFile('/../public/index.html');
+res.sendFile(path.resolve(__dirname+'/../public/'+'index.html'));
 });
 };
