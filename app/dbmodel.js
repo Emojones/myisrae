@@ -11,4 +11,4 @@ var blogSchema = new mongoose.Schema({
 var model = mongoose.model('blogPost', blogSchema);
 
 //expose the model
-model.exports = model;
+module.exports = model

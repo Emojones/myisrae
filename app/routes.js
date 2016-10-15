@@ -1,18 +1,23 @@
 //import the dbmodel
 var Blog = require('./dbmodel');
 
+//backend routes############################################
 module.exports = function(app) {
-  app.get('/api/blog', function(req, res) {
+  app.get('/blog', function(req, res) {
              Blog.find(function(err, blogs) {
-                if (err) res.send(err);
-                 res.json(blogs);
-             });
+                if (err) {
+                  res.send(err);
+                } else res.json(blogs);
+              });
          });
 
 //TODO: post create
 //TODO: post delete
 
+
+//frontend routes################################################
+//route to handle all angular requests
 app.get('*', function(req, res) {
- res.sendfile('../public/index.html'); // load our public/index.html file
-               });
+res.sendFile('/../public/index.html');
+});
 };

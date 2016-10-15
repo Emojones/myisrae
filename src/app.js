@@ -23,7 +23,7 @@ app.use(parser.json());
 
 
 //our routes
-require('../app/routes');
+require('../app/routes')(app);
 
 //start the server and print out to the console
 app.listen(3000, function () {
