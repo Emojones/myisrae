@@ -1,9 +1,9 @@
-angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('appRoutes', [])
+  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
     $routeProvider
-
         .when('/', {
-            templateUrl: '../index.html',
+            templateUrl: '/html/index.html',
         })
 
         .when('/about', {
@@ -11,5 +11,4 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
               });
 
     $locationProvider.html5Mode(true);
-
 }]);

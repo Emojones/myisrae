@@ -1,8 +1,14 @@
 // define model =================
 var mongoose = require('mongoose');
 
-
-module.exports = mongoose.model('blogPost', {
+//set the schema
+var blogSchema = new mongoose.Schema({
     name: String,
-    body: String
+    body: String,
 });
+
+//make the model
+var model = mongoose.model('blogPost', blogSchema);
+
+//expose the model
+model.exports = model;
