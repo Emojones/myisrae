@@ -6,9 +6,14 @@ var app = express();
 var parser = require('body-parser');
 var mongoose = require('mongoose');
 var blogMock = require('../mock/blogMock.json');
+var path = require('path');
 
 //import config files
 var db = require('../config/db');
+
+//serve these static files
+app.use(parser.json());
+app.use(express.static(path.join(__dirname + '/../public')));
 
 //connect to mongo
 mongoose.connect(db.url, function(err){
@@ -16,11 +21,6 @@ mongoose.connect(db.url, function(err){
     console.log("Unable to connect to database")
   } else {console.log("Connected to database")};
 });
-
-//server these static files
-app.use(express.static(__dirname+'/public'));
-app.use(parser.json());
-
 
 //our routes
 require('../app/routes')(app);
