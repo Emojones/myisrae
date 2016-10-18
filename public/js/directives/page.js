@@ -1,10 +1,10 @@
 'use strict';
 
-var angular = require('angular');
-var app = angular();
+var app = angular.module('app', []);
+
 app.directive('navbar', function(){
   return {
     restrict : 'E',
-    templateUrl: './public/html/navbar.html'
+    templateUrl: '/../../html/navbar.html'
   };
 });
