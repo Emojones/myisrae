@@ -12,7 +12,7 @@ module.exports = function(app) {
         Blog.find(function(err, blogs) {
             if (err) {
                 res.send(err);
-            } else res.json(blogs)
+            } else res.json()
         });
     });
 
@@ -22,8 +22,8 @@ module.exports = function(app) {
 
 //frontend routes################################################
 //route to handle all angular requests
-app.get('/', function(req, res) {
-  res.sendFile('public/index.html', {'root': __dirname+'/../'});
+app.get('*', function(req, res) {
+  res.render('/index.html');
 });
 
 };

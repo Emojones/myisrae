@@ -13,7 +13,7 @@ var db = require('../config/db');
 
 //serve these static files
 app.use(parser.json());
-app.use(express.static(path.join(__dirname + '/../public')));
+app.use(express.static(__dirname + '/../public'));
 
 //connect to mongo
 mongoose.connect(db.url, function(err){
@@ -29,6 +29,6 @@ require('../app/routes')(app);
 app.listen(3000, function () {
     console.log("The server is running on port 3000");
 });
-
-//expose our app
-exports = module.exports = app;
+//
+// //expose our app
+// exports = module.exports = app;
