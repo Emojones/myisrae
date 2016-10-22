@@ -1,20 +1,20 @@
-var app = angular.module('app',['ngRoute']);
-
-app.config(function($routeProvider){
+'use strict'
+angular.module('app', ['ngRoute'])
+.config(['$routeProvider', function($routeProvider){
 $routeProvider
   .when('/', {
-    templateUrl: '/../html/home.html'
+    templateUrl: 'html/home.html'
   })
 
-  .when('/#/about', {
-    templateUrl: '../html/about.html'
+  .when('/about', {
+    templateUrl: '/../html/about.html'
   })
 
   .when('/media', {
     templateUrl: '/../html/media.html'
   })
 
-  .when('/#/blog', {
+  .when('/blog', {
     templateUrl: '/../html/blog.html'
   })
 
@@ -22,6 +22,6 @@ $routeProvider
     templateUrl: '/../html/tours.html'
   })
 
-  .otherwise ({templateUrl: '/../html/home.html'});
+  .otherwise ({redirectTO: '/'});
 
-});
+}]);
