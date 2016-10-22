@@ -15,16 +15,14 @@ module.exports = function(app) {
             } else res.json(blogs)
         });
     });
-    app.get('/about', function(req, res) {
-      res.send('hello world!');
-    });
+
     //TODO: post create
     //TODO: post delete
 
 
 //frontend routes################################################
 //route to handle all angular requests
-app.get('/index', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile('public/index.html', {'root': __dirname+'/../'});
 });
 
