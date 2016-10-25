@@ -22,7 +22,7 @@ angular.module('app', ['ngRoute']).config(['$routeProvider', function($routeProv
     })
 
     .otherwise({
-        redirectTO: '/'
+        redirectTo: '/'
     });
 
 }]);
