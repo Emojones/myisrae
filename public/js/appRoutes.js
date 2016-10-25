@@ -1,9 +1,8 @@
 'use strict'
-angular.module('app', ['ngRoute']).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
-$locationProvider.html5Mode(true);
+angular.module('app', ['ngRoute']).config(['$routeProvider', function($routeProvider){
 $routeProvider
   .when('/', {
-    templateUrl: '/../html/home.html'
+    templateUrl: '../html/home.html'
   })
 
   .when('/about', {
@@ -23,6 +22,5 @@ $routeProvider
   })
 
   .otherwise ({redirectTO: '/'});
-
 
 }]);
