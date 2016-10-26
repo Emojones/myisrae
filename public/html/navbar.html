@@ -10,13 +10,13 @@
             <span class="icon-bar"></span>
           </button>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
+                <div id="navbar" class="navbar-collapse collapse" ng-controller="navbarCtrl">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#/">Home</a></li>
-                        <li><a href="#/about">About</a></li>
-                        <li><a href="#/media">Media</a></li>
-                        <li><a href="#/blog">Blog</a></li>
-                        <li><a href="#/tours">Tours</a></li>
+                        <li ng-class="{active:isActive('/')}"><a href="#/">Home</a></li>
+                        <li ng-class="{active:isActive('/about')}"><a href="#/about">About</a></li>
+                        <li ng-class="{active:isActive('/media')}"><a href="#/media">Media</a></li>
+                        <li ng-class="{active:isActive('/blog')}"><a href="#/blog">Blog</a></li>
+                        <li ng-class="{active:isActive('/tours')}"><a href="#/tours">Tours</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="../navbar/">Join Us</a></li>
