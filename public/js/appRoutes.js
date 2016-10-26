@@ -9,16 +9,12 @@ angular.module('app', ['ngRoute']).config(['$routeProvider', function($routeProv
         templateUrl: 'html/about.html'
     })
 
-    .when('/media', {
-        templateUrl: 'html/media.html'
+    .when('/projects', {
+        templateUrl: 'html/projects.html'
     })
 
     .when('/blog', {
         templateUrl: 'html/blog.html'
-    })
-
-    .when('/tours', {
-        templateUrl: 'html/tours.html'
     })
 
     .otherwise({
