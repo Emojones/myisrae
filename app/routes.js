@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var Blog = require('./dbmodel');
 var path = require('path');
+var blogMock = require('../mock/blogMock');
 
 
 //backend routes############################################
@@ -12,7 +13,7 @@ module.exports = function(app) {
         Blog.find(function(err, blogs) {
             if (err) {
                 res.send(err);
-            } else res.json()
+            } else res.json(blogMock)
         });
     });
 

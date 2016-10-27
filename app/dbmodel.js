@@ -4,6 +4,8 @@ var mongoose = require('mongoose');
 //set the schema
 var blogSchema = new mongoose.Schema({
     name: String,
+    date: String,
+    author: String,
     body: String,
 });
 
