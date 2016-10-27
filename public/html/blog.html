@@ -7,12 +7,12 @@
 
     <div class="row">
 
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-8 blog-main" ng-controller="blogCtrl">
 
             <div class="blog-post">
-                <h2 class="blog-post-title">{{title}}</h2>
+                <h2 class="blog-post-title">{{blog.title}}</h2>
                 <p class="blog-post-meta">{{date}}<a href="#">{{author}}</a></p>
-                <p>{{body}}</p>
+                <p>{{mybody}}</p>
             </div>
             <!-- /.blog-post -->
 

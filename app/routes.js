@@ -9,7 +9,7 @@ var blogMock = require('../mock/blogMock');
 
 //backend routes############################################
 module.exports = function(app) {
-    app.get('/blog', function(req, res) {
+    app.get('/api/blog', function(req, res) {
         Blog.find(function(err, blogs) {
             if (err) {
                 res.send(err);
