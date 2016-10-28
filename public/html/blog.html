@@ -9,11 +9,11 @@
 
         <div class="col-sm-8 blog-main" ng-controller="blogCtrl" >
 
-            <div class="blog-post" ng-repeat="blog in blogs">
-                <h2 class="blog-post-title">{{blog.title}}</h2>
-                <p class="blog-post-meta">{{blog.date}}<a href="#">{{blog.author}}</a></p>
-                <p>{{blog.body}}</p>
-                <button class="edit">Edit</button>
+            <div class="blog-post" ng-repeat="blog in blogs" ng-controller="TextBtnCtrl">
+                <h2 class="blog-post-title" editable-textarea="blog.title" e-form="textBtnForm">{{blog.title}}</h2>
+                <p class="blog-post-meta">{{blog.date}}{{blog.author}}</a></p>
+                <p editable-textarea="blog.body" e-form="textBtnForm" e-rows="20" e-cols="100">{{blog.body}}</p>
+                <button class="edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible"  >Edit</button>
                 <button class="delete">Delete</button>
             </div>
             <!-- /.blog-post -->
