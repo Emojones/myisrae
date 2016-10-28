@@ -7,12 +7,14 @@
 
     <div class="row">
 
-        <div class="col-sm-8 blog-main" ng-controller="blogCtrl">
+        <div class="col-sm-8 blog-main" ng-controller="blogCtrl" >
 
-            <div class="blog-post">
+            <div class="blog-post" ng-repeat="blog in blogs">
                 <h2 class="blog-post-title">{{blog.title}}</h2>
-                <p class="blog-post-meta">{{date}}<a href="#">{{author}}</a></p>
-                <p>{{mybody}}</p>
+                <p class="blog-post-meta">{{blog.date}}<a href="#">{{blog.author}}</a></p>
+                <p>{{blog.body}}</p>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
             </div>
             <!-- /.blog-post -->
 
