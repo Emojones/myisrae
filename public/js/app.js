@@ -1,1 +1,1 @@
-angular.module('app', ['appRoutes']);
+angular.module('app', ['appRoutes', 'xeditable']);

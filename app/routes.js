@@ -18,7 +18,22 @@ module.exports = function(app) {
     });
 
     //TODO: post create
+    app.post('/api/blog/', function(req, res) {
+        Blog.find(function(err, blogs) {
+            if (err) {
+                res.send(err);
+            } else res.json(blogMock)
+        });
+    });
+
     //TODO: post delete
+    app.delete('/api/blog/', function(req, res) {
+        Blog.find(function(err, blogs) {
+            if (err) {
+                res.send(err);
+            } else res.json(blogMock)
+        });
+    });
 
 
 //frontend routes################################################
