@@ -13,8 +13,8 @@
                 <h2 class="blog-post-title" editable-textarea="blog.title" e-form="textBtnForm">{{blog.title}}</h2>
                 <p class="blog-post-meta">{{blog.date}}{{blog.author}}</a></p>
                 <p editable-textarea="blog.body" e-form="textBtnForm" e-rows="20" e-cols="100">{{blog.body}}</p>
-                <button class="edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible"  >Edit</button>
-                <button class="delete">Delete</button>
+                <button class="edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
+                <button class="delete" ng-click="deleteBlog($index)">Delete</button>
             </div>
             <!-- /.blog-post -->
 
