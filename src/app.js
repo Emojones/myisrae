@@ -5,11 +5,11 @@ var express = require('express');
 var app = express();
 var parser = require('body-parser');
 var mongoose = require('mongoose');
-var blogMock = require('../mock/blogMock.json');
-var path = require('path');
-
+//var blogMock = require('../mock/blogMock.json');
+var routes = require('../app/routes');
 //import config files
 var db = require('../config/db');
+//require ('../mock/seed');
 
 //serve these static files
 app.use(parser.json());
@@ -22,8 +22,8 @@ mongoose.connect(db.url, function(err){
   } else {console.log("Connected to database")};
 });
 
-//our routes
-require('../app/routes')(app);
+app.get('/api/blog', routes);
+
 
 //start the server and print out to the console
 app.listen(3000, function () {

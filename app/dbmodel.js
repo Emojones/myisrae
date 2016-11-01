@@ -11,7 +11,7 @@ var blogSchema = new mongoose.Schema({
 });
 
 //make the model
-var model = mongoose.model('blogPost', blogSchema);
+var Blog = mongoose.model('Blog', blogSchema);
 
 //expose the model
-module.exports = model
+module.exports = Blog;

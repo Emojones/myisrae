@@ -1,45 +1,30 @@
 'use strict'
-//import the dbmodel
 var express = require('express');
 var app = express();
 var Blog = require('./dbmodel');
-var path = require('path');
-var blogMock = require('../mock/blogMock');
+var router = express.Router();
 
-
-//backend routes############################################
-module.exports = function(app) {
-    app.get('/api/blog', function(req, res) {
-        Blog.find(function(err, blogs) {
-            if (err) {
-                res.send(err);
-            } else res.json(blogMock)
-        });
+router.get('/api/blog', function (req, res) {
+  Blog.find({}, function (err, blogs) {
+    if (err) {
+      return res.status(500).json({message: err.message});
+    }
+    res.json({
+      blogs: blogs
     });
+  });
+});
 
-    //TODO: post create
-    app.post('/api/blog/', function(req, res) {
-        Blog.find(function(err, blogs) {
-            if (err) {
-                res.send(err);
-            } else res.json(blogMock)
-        });
-    });
+router.delete('/api/blog/:id', function (req, res) {
+  res.send('Got a DELETE request');
+});
 
-    //TODO: post delete
-    app.delete('/api/blog/', function(req, res) {
-        Blog.find(function(err, blogs) {
-            if (err) {
-                res.send(err);
-            } else res.json(blogMock)
-        });
-    });
+router.put('/api/blog/:id', function (req, res) {
+  res.send('Got a PUT request');
+});
 
+router.post('/api/blog', function (req, res) {
+  res.send('Got a POST request');
+});
 
-//frontend routes################################################
-//route to handle all angular requests
-// app.get('*', function(req, res) {
-//   res.render('/index.html');
-// });
-
-};
+module.exports = router;
