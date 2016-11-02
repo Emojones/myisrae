@@ -11,10 +11,10 @@
 
             <div class="blog-post" ng-repeat="blog in blogs" ng-controller="TextBtnCtrl">
                 <h2 class="blog-post-title" editable-textarea="blog.title" e-form="textBtnForm">{{blog.title}}</h2>
-                <p class="blog-post-meta">{{blog.date}}{{blog.author}}</a></p>
+                <p class="blog-post-meta">{{blog.date}} {{blog.author}}</a></p>
                 <p editable-textarea="blog.body" e-form="textBtnForm" e-rows="20" e-cols="100">{{blog.body}}</p>
-                <button class="edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
-                <button class="delete" ng-click="deleteBlog(blog)">Delete</button>
+                <button class="edit btn btn-primary" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
+                <button class="delete btn btn-danger" ng-click="deleteBlog(blog)">Delete</button>
             </div>
             <!-- /.blog-post -->
 
@@ -28,35 +28,24 @@
         </div>
         <!-- /.blog-main -->
 
+        <!--NEW POST -->
+        <div>
+          <button type="button" ng-click="" class="btn-success btn btn-small">New Post</button>
+        </div>
 <!-- SIDEBAR -->
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
                 <h4>About</h4>
                 <p>ISRAE is dedicated to providing quantifiable evidence for believers and skeptics alike. Journey with us into the unknown and judge for yourself; are these shared experiences or just tricks of the mind?</p>
             </div>
-            <div class="sidebar-module">
-                <h4>Archives</h4>
-                <ol class="list-unstyled">
-                    <li><a href="#">March 2014</a></li>
-                    <li><a href="#">February 2014</a></li>
-                    <li><a href="#">January 2014</a></li>
-                    <li><a href="#">December 2013</a></li>
-                    <li><a href="#">November 2013</a></li>
-                    <li><a href="#">October 2013</a></li>
-                    <li><a href="#">September 2013</a></li>
-                    <li><a href="#">August 2013</a></li>
-                    <li><a href="#">July 2013</a></li>
-                    <li><a href="#">June 2013</a></li>
-                    <li><a href="#">May 2013</a></li>
-                    <li><a href="#">April 2013</a></li>
-                </ol>
-            </div>
 
             <div class="sidebar-module">
                 <h4>Or check us out here:</h4>
                 <ol class="list-unstyled">
-                    <li><a href="https://twitter.com/ISRAEResearch"><img src="/images/twitter-wrap.png" alt="twitter logo" width="15" height="15"> Twitter</a></li>
-                    <li><a href="https://www.facebook.com/anomalousfieldphenomena"><img src="/images/facebook-wrap.png" alt="facebook logo" width="15" height="15"> Facebook</a></li>
+                    <li>
+                      <a href="https://twitter.com/ISRAEResearch"><img src="/images/twitter-wrap.png" alt="twitter logo" width="15" height="15"> Twitter</a></li>
+                    <li>
+                      <a href="https://www.facebook.com/anomalousfieldphenomena"><img src="/images/facebook-wrap.png" alt="facebook logo" width="15" height="15"> Facebook</a></li>
                 </ol>
             </div>
         </div>
