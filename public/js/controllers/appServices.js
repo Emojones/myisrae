@@ -7,9 +7,17 @@ angular.module('app')
             console.error(err);
         })
 
-        $scope.deleteBlog=function(blog){
+        $scope.deleteBlog=function(index){
 //for loop to iteratie through ids, then delete when matched
-          $scope.blogs.splice(blog, 1);
+          $scope.blogs.splice(index, 1);
           //http after splice
         }
     });
+
+
+    // from treehouse for reference
+    // .controller('todoCtrl', function ($scope, dataService) {
+    //     $scope.deleteTodo = function (todo, index) {
+    //       $scope.todos.splice(index, 1);
+    //       dataService.deleteTodo(todo);
+    //     };
