@@ -1,1 +1,1 @@
-angular.module('app', ['appRoutes', 'xeditable']);
+angular.module('app', ['appRoutes', 'xeditable', 'ngAnimate']);

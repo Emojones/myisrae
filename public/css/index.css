@@ -1,7 +1,6 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
+/* GLOBAL
+***********************/
 /* Padding below the footer and lighter body text */
-
 body {
   padding-bottom: 40px;
     padding-top: 65px;
@@ -9,8 +8,8 @@ body {
 }
 
 
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
+/* NAVBAR
+***********************/
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 .navbar-wrapper {
@@ -35,8 +34,8 @@ body {
 }
 
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
+/* CAROUSEL
+***********************/
 
 /* Carousel base class */
 .carousel {
@@ -63,8 +62,8 @@ body {
 }
 
 
-/* MARKETING CONTENT
--------------------------------------------------- */
+/* MAIN PAGE CONTENT
+***********************/
 
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
@@ -80,8 +79,8 @@ body {
 }
 
 
-/* Featurettes
-------------------------- */
+/* FEATURETTS
+***********************/
 
 .featurette-divider {
   margin: 80px 0; /* Space out the Bootstrap <hr> more */
@@ -92,6 +91,25 @@ body {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+/***ANIMATIONS
+***********************/
+@keyframes slideOutLeft {
+    to   { transform: translateX(-100%); }
+}
+
+@keyframes slideInRight {
+    from  { transform:translateX(100%); }
+    to    { transform: translateX(0); }
+}
+
+.ng-enter{
+   animation: slideInRight 0.5s both ease-in; z-index: 8888;
+ }
+
+.ng-leave{
+  animation: slideOutLeft 0.5s both ease-in; z-index: 9999;
 }
 
 
