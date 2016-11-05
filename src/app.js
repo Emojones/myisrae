@@ -24,12 +24,14 @@ mongoose.connect(db.url, function(err){
   } else {console.log("Connected to database")};
 });
 
-app.get('/api/blog', routes);
+app.get('/api/blog/', routes);
+app.delete('/api/blog/:_id', routes);
+
 
 //start the server and print out to the console
 app.listen(3000, function () {
     console.log("The server is running on port 3000");
 });
-//
+
 // //expose our app
 // exports = module.exports = app;

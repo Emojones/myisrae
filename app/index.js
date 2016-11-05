@@ -27,5 +27,3 @@ router.put('/todos:id', function (req, res) {
 });
 
 //TODOL add DELETE route to delete entries
-
-module.exports = router;
