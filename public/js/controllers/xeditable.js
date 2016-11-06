@@ -14,9 +14,14 @@ angular.module('app')
  $scope.body = {body: ""};
 
  $scope.updateBlog = function(_id, data) {
-   console.log ("this is some stuff");
-     $http.put('/api/blog/'+_id, {title: $scope.blog.title,  body: $scope.blog.body});
-  };
+     $http.put('/api/blog/'+_id, {title: $scope.blog.title,  body: $scope.blog.body})
+     .success(function(data) {
+         console.log(data);
+     })
+     .error(function(data) {
+         console.log('Error' + data);
+     });
+};
 
   $scope.deleteBlog = function(_id) {
       $scope.blogs.splice(_id, 1);
