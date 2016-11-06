@@ -20,17 +20,25 @@ router.delete('/api/blog/:_id', function(req, res) {
         _id: req.params._id
     }, function(err) {
         if (err) {
-            return res.status(500).json({
-                message: err.message
-            });
+            return res.status(500).json({message: err.message});
         }
         return res.send('Post deleted!');
     });
 });
 
-router.put('/api/blog/:id', function(req, res) {
-    res.send('Got a PUT request');
+router.put('/api/blog/:_id', function(req, res) {
+  var id = req.params._id;
+  var blog = req.body;
+  Blog.findByIdAndUpdate(id, blog, {new: true}, function (err, blog) {
+      if (err) {
+        return res.status(500).json({err: err.message});
+      }
+   return  res.send('Post Updated');
+  });
 });
+
+
+
 
 router.post('/api/blog', function(req, res) {
     res.send('Got a POST request');

@@ -1,11 +1,39 @@
 'use strict';
 
 angular.module('app')
-.controller('TextBtnCtrl', function($scope, $http) {
-  $scope.title = {title: ""};
-  $scope.body = {body: ""};
+.controller('blogCtrl', function($scope, $http) {
+    $http.get('/api/blog').then(function(response) {
+        $scope.blogs = response.data.blogs;
+    }, function(err) {
+        console.error(err);
+    })
+})
 
-  $scope.updateBlog = function(data) {
-   return $http.post('/api/blog');
- };
+.controller('TextBtnCtrl', function($scope, $http) {
+ $scope.title = {title: ""};
+ $scope.body = {body: ""};
+
+ $scope.updateBlog = function(_id, data) {
+   console.log ("this is some stuff");
+     $http.put('/api/blog/'+_id, {title: $scope.blog.title,  body: $scope.blog.body});
+  };
+
+  $scope.deleteBlog = function(_id) {
+      $scope.blogs.splice(_id, 1);
+      $http.delete('/api/blog/' + _id)
+          .success(function(data) {
+              $scope.blog = data;
+              console.log(data);
+          })
+          .error(function(data) {
+              console.log('Error' + data);
+          });
+  };
+})
+
+.controller('newPostCtrl', function($scope, $http){
+  $scope.title = {title: ""};
+  $scope.date = {date: ""};
+  $scope.author = {author: ""};
+  $scope.body = {body: ""};
 });

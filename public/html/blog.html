@@ -9,8 +9,8 @@
 
         <div class="col-sm-8 blog-main" ng-controller="blogCtrl" >
 
-            <div class="blog-post" ng-repeat="blog in blogs" ng-controller="TextBtnCtrl">
-                <h2 class="blog-post-title" editable-textarea="blog.title" e-form="textBtnForm">{{blog.title}}</h2>
+            <div class="blog-post" ng-repeat="blog in blogs" ng-controller="TextBtnCtrl"  >
+                <h2 class="blog-post-title" editable-textarea="blog.title" e-form="textBtnForm" onaftersave="updateBlog(blog._id, $data)">{{blog.title}}</h2>
                 <p class="blog-post-meta">{{blog.date}} {{blog.author}}</a></p>
                 <p editable-textarea="blog.body" e-form="textBtnForm" e-rows="20" e-cols="100">{{blog.body}}</p>
                 <button class="edit btn btn-primary" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
@@ -24,14 +24,10 @@
                     <li><a href="#">Next</a></li>
                 </ul>
             </nav>
-
         </div>
         <!-- /.blog-main -->
 
-        <!--NEW POST -->
-        <div>
-          <button type="button" ng-click="" class="btn-success btn btn-small">New Post</button>
-        </div>
+
 <!-- SIDEBAR -->
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">

@@ -26,6 +26,8 @@ mongoose.connect(db.url, function(err){
 
 app.get('/api/blog/', routes);
 app.delete('/api/blog/:_id', routes);
+app.post('/api/blog/', routes);
+app.put('/api/blog/:_id', routes);
 
 
 //start the server and print out to the console
