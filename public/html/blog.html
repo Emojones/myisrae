@@ -5,9 +5,16 @@
         <p class="lead blog-description">We are here to explorer the unknown</p>
     </div>
 
-    <div class="row">
+    <div class="row" ng-controller="blogCtrl">
 
-        <div class="col-sm-8 blog-main" ng-controller="blogCtrl" >
+        <div class="col-sm-8 blog-main" >
+
+<form class="newBlog">
+          <input e-form="textBtnForm" editable-textarea="blog.title"></input>
+          <input e-form="textBtnForm" editable-textarea="blog.data" ></input>
+          <input e-form="textBtnForm" editable-textarea="blog.author"></input>
+          <input e-form="textBtnForm" editable-textarea="blog.body" e-rows="20" e-cols="100"></input>
+</form>
 
             <div class="blog-post" ng-repeat="blog in blogs" ng-controller="TextBtnCtrl"  >
                 <h2 class="blog-post-title" editable-textarea="blog.title" e-form="textBtnForm" onaftersave="updateBlog(blog._id, $data)">{{blog.title}}</h2>
@@ -24,9 +31,11 @@
                     <li><a href="#">Next</a></li>
                 </ul>
             </nav>
+
         </div>
         <!-- /.blog-main -->
 
+  <button class="btn btn-success" ng-click="show" ng-hide="textBtnForm.$visible">New Post</button>
 
 <!-- SIDEBAR -->
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">

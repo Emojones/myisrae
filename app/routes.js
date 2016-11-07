@@ -38,8 +38,14 @@ router.put('/api/blog/:_id', function(req, res) {
 });
 
 
-router.post('/api/blog', function(req, res) {
-    res.send('Got a POST request');
-});
+// router.post('/api/blog', function(req, res) {
+//     res.send('Got a POST request');
+//     Blog.create({}, function(err) {
+//         if (err) {
+//           return res.status(500).json({message: err.message});
+//         }
+//           return res.send('Post Created!');
+//     });
+// });
 
 module.exports = router;
