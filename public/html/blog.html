@@ -7,18 +7,38 @@
 
     <div class="row" ng-controller="blogCtrl">
 
-        <div class="col-sm-8 blog-main" >
+        <div class="col-sm-8 blog-main">
 
-<form class="newBlog">
-          <input e-form="textBtnForm" editable-textarea="blog.title"></input>
-          <input e-form="textBtnForm" editable-textarea="blog.data" ></input>
-          <input e-form="textBtnForm" editable-textarea="blog.author"></input>
-          <input e-form="textBtnForm" editable-textarea="blog.body" e-rows="20" e-cols="100"></input>
-</form>
+          <!-- new-blog-->
+            <form class="newBlog" ng-show="showNewBlog">
+                <div class="form-group">
+                    <label class="sr-only" for="blogTitle">Title</label>
+                    <input id="blogTitle" input="text" class="form-control" placeholder="Blog title">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="blogTitle">Date</label>
+                    <input id="blogDate" input="text" class="form-control" placeholder="Blog Date">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="blogAuthor">Author</label>
+                    <input id="blogAuthor" input="text" class="form-control" placeholder="Blog Author">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="blogBody">Body</label>
+                    <textarea id="blogBody" input="text" class="form-control" placeholder="Blog" rows="20"></textarea>
+                </div>
 
-            <div class="blog-post" ng-repeat="blog in blogs" ng-controller="TextBtnCtrl"  >
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button class="btn btn-default" ng-click="show">Cancel</button>
+
+            </form>
+            <!-- /.new-blog -->
+
+            <!-- blog-post -->
+            <div class="blog-post" ng-repeat="blog in blogs" ng-controller="TextBtnCtrl">
                 <h2 class="blog-post-title" editable-textarea="blog.title" e-form="textBtnForm" onaftersave="updateBlog(blog._id, $data)">{{blog.title}}</h2>
-                <p class="blog-post-meta">{{blog.date}} {{blog.author}}</a></p>
+                <p class="blog-post-meta">{{blog.date}} {{blog.author}}</a>
+                </p>
                 <p editable-textarea="blog.body" e-form="textBtnForm" e-rows="20" e-cols="100">{{blog.body}}</p>
                 <button class="edit btn btn-primary" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
                 <button class="delete btn btn-danger" ng-click="deleteBlog(blog._id)">Delete</button>
@@ -35,9 +55,9 @@
         </div>
         <!-- /.blog-main -->
 
-  <button class="btn btn-success" ng-click="show" ng-hide="textBtnForm.$visible">New Post</button>
+        <button class="btn btn-success" ng-click="showNewBlog = !showNewBlog">New Post</button>
 
-<!-- SIDEBAR -->
+        <!-- SIDEBAR -->
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
             <div class="sidebar-module sidebar-module-inset">
                 <h4>About</h4>
@@ -48,13 +68,15 @@
                 <h4>Or check us out here:</h4>
                 <ol class="list-unstyled">
                     <li>
-                      <a href="https://twitter.com/ISRAEResearch"><img src="/images/twitter-wrap.png" alt="twitter logo" width="15" height="15"> Twitter</a></li>
+                        <a href="https://twitter.com/ISRAEResearch"><img src="/images/twitter-wrap.png" alt="twitter logo" width="15" height="15"> Twitter</a>
+                    </li>
                     <li>
-                      <a href="https://www.facebook.com/anomalousfieldphenomena"><img src="/images/facebook-wrap.png" alt="facebook logo" width="15" height="15"> Facebook</a></li>
+                        <a href="https://www.facebook.com/anomalousfieldphenomena"><img src="/images/facebook-wrap.png" alt="facebook logo" width="15" height="15"> Facebook</a>
+                    </li>
                 </ol>
             </div>
         </div>
-<!-- /.blog-sidebar -->
+        <!-- /.blog-sidebar -->
 
     </div>
     <!-- /.row -->
