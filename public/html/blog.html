@@ -10,7 +10,7 @@
         <div class="col-sm-8 blog-main">
 
           <!-- new-blog-->
-            <form class="newBlog" ng-show="showNewBlog">
+            <form class="newBlog" ng-show="showNewBlog" ng-controller="newPostCtrl">
                 <div class="form-group">
                     <label class="sr-only" for="blogTitle">Title</label>
                     <input id="blogTitle" input="text" class="form-control" placeholder="Blog title">
@@ -28,8 +28,8 @@
                     <textarea id="blogBody" input="text" class="form-control" placeholder="Blog" rows="20"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button class="btn btn-default" ng-click="show">Cancel</button>
+                <button type="submit" id="newBlogSubmit" class="btn btn-primary" ng-click="newBlog()">Submit</button>
+                <button class="btn btn-default" ng-click="showNewBlog = !showNewBlog">Cancel</button>
 
             </form>
             <!-- /.new-blog -->
