@@ -44,25 +44,16 @@ angular.module('app')
 })
 
 .controller('newPostCtrl', function($scope, $http) {
-    $scope.title = {
-        title: ""
-    };
-    $scope.date = {
-        date: ""
-    };
-    $scope.author = {
-        author: ""
-    };
-    $scope.body = {
-        body: ""
-    };
     $scope.newBlog = function() {
-      $http.post('/api/blog/')
-            .success(function(data) {
-                console.log(data);
+      console.log($scope.blog);
+        $http.post('/api/blog/', $scope.blog)
+            .then(function(data) {
+                $scope.blog = data.data;
+                $scope.blogs.unshift(data.data);
+                console.log(data.data);
             })
-            .error(function(data) {
-                console.log('Error' + data);
-            });
+            // .error(function(data) {
+            //     console.log('Error' + data);
+            // });
     };
-  });
+});

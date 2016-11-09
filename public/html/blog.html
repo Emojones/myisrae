@@ -10,25 +10,25 @@
         <div class="col-sm-8 blog-main">
 
           <!-- new-blog-->
-            <form class="newBlog" ng-show="showNewBlog" ng-controller="newPostCtrl">
+            <form class="newBlog" ng-show="showNewBlog" ng-submit="newBlog()" ng-controller="newPostCtrl">
                 <div class="form-group">
                     <label class="sr-only" for="blogTitle">Title</label>
-                    <input id="blogTitle" input="text" class="form-control" placeholder="Blog title">
+                    <input id="blogTitle" input="text" ng-model="blog.title" class="form-control" placeholder="Blog title">
                 </div>
                 <div class="form-group">
                     <label class="sr-only" for="blogTitle">Date</label>
-                    <input id="blogDate" input="text" class="form-control" placeholder="Blog Date">
+                    <input id="blogDate" input="text" ng-model="blog.date" class="form-control" placeholder="Blog Date">
                 </div>
                 <div class="form-group">
                     <label class="sr-only" for="blogAuthor">Author</label>
-                    <input id="blogAuthor" input="text" class="form-control" placeholder="Blog Author">
+                    <input id="blogAuthor" input="text" ng-model="blog.author" class="form-control" placeholder="Blog Author">
                 </div>
                 <div class="form-group">
                     <label class="sr-only" for="blogBody">Body</label>
-                    <textarea id="blogBody" input="text" class="form-control" placeholder="Blog" rows="20"></textarea>
+                    <textarea id="blogBody" input="text" ng-model="blog.body" class="form-control" placeholder="Blog" rows="20"></textarea>
                 </div>
 
-                <button type="submit" id="newBlogSubmit" class="btn btn-primary" ng-click="newBlog()">Submit</button>
+                <button type="submit" id="newBlogSubmit" class="btn btn-primary">Submit</button>
                 <button class="btn btn-default" ng-click="showNewBlog = !showNewBlog">Cancel</button>
 
             </form>

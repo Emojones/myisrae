@@ -33,18 +33,18 @@ router.put('/api/blog/:_id', function(req, res) {
       if (err) {
         return res.status(500).json({message: err.message});
       }
-        return  res.send('Post Updated');
+        return  res.send('Post Updated!');
   });
 });
 
-
-router.post('/api/blog', function(req, res) {
-    res.send('Got a POST request');
-    Blog.create({}, function(err) {
+router.post('/api/blog/', function(req, res) {
+  var blog = req.body;
+  console.log(blog);
+    Blog.create(blog, function(err) {
         if (err) {
           return res.status(500).json({message: err.message});
         }
-          return res.send('Post Created!');
+          return res.json(blog);
     });
 });
 
