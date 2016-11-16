@@ -18,7 +18,12 @@ Make sure you have node insalled first then using the bash shell navigate to the
 To start mongo open a bash shell and type 'mongod' to start your mongo server. If you get a bash command not found error you will need to edit your windows files to recognize mongod as a path to the mongo bin file.
 
 ##start src/app.js
-Using a window seperate from where you started mongo navigate to your repository directory and run 'src/app.js' you should see a notification that the server is running on port 3000 and that it is connected to the database. Now you're ready!
+Using a new window from where you started mongo navigate to your repository directory and run 'node src/app.js' you should see a notification that the server is running on port 3000 and that it is connected to the database. Now you're ready!
 
 ##navigate to localhost:3000/
 With both mongo and the server running, open a new web browser and go to the web address 'localhost:3000/' to get to the site.
+
+####Other stuff
+At this time I chose not to minify or ugly for the sake of peer review. Having easy to read code makes it a lot easier to get tips from folks on my code.
+
+If you shut down the node server and restart, it will seed the database with a core set of fake posts to populate the screen.

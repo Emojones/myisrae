@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container blogContainer">
 
     <div class="blog-header">
         <h1 class="blog-title">My ISRAE Tales</h1>
@@ -27,10 +27,8 @@
                     <label class="sr-only" for="blogBody">Body</label>
                     <textarea id="blogBody" input="text" ng-model="blog.body" class="form-control" placeholder="Blog" rows="20"></textarea>
                 </div>
-
                 <button type="submit" id="newBlogSubmit" class="btn btn-primary">Submit</button>
-                <button class="btn btn-default" ng-click="showNewBlog = !showNewBlog">Cancel</button>
-
+                <button type="button" class="btn btn-default" ng-click="toggle(); reset();">Cancel</button>
             </form>
             <!-- /.new-blog -->
 
@@ -44,14 +42,6 @@
                 <button class="delete btn btn-danger" ng-click="deleteBlog(blog._id)">Delete</button>
             </div>
             <!-- /.blog-post -->
-
-            <nav>
-                <ul class="pager">
-                    <li><a href="#">Previous</a></li>
-                    <li><a href="#">Next</a></li>
-                </ul>
-            </nav>
-
         </div>
         <!-- /.blog-main -->
 
