@@ -141,6 +141,14 @@ body {
     }
 }
 
+/**
+    NOTE: You might have noticed that the body element shows a scrollbar as the pages transition
+    
+    I would figure out a way to make that not happen. 
+    
+    You don't really need page transitions at all, to be honest.
+*/
+
 .ng-enter {
     animation: slideInRight 0.5s both ease-in;
     z-index: 8888;
@@ -149,4 +157,13 @@ body {
 .ng-leave {
     animation: slideOutLeft 0.5s both ease-in;
     z-index: 9999;
+}
+
+
+/**
+    NOTE: This was bothering me
+*/
+footer {
+    text-align: center;
+    padding-top: 24px;
 }
