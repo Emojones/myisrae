@@ -17,6 +17,13 @@ require ('../mock/seed');
 app.use(parser.json());
 app.use(express.static(__dirname + '/../public'));
 
+/**
+ *  TODO: host the node_modules folder (or at least node_modules/angular) to a static route
+ *  so you don't need the vendor directory
+ * 
+ *    app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
+**/
+
 //connect to mongodb
 mongoose.connect(db.url, function(err){
   if (err) {

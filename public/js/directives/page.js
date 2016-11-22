@@ -17,7 +17,8 @@ angular.module('app')
 
 //Uses angular to set the class to active on the current page
 .controller('navbarCtrl', ['$scope', '$location', function navbarCtrl($scope, $location){
-$scope.isActive = function (viewLocation) {
-       return viewLocation === $location.path();
-   };
+  $scope.isActive = function (viewLocation) {
+    return viewLocation === $location.path();
+  };
 }]);
+

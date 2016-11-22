@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * NOTE: you will want to clean up all these console.logs for production
+ */
+
 angular.module('app')
     .controller('blogCtrl', function($scope, $http) {
         $http.get('/api/blog').then(function(response) {
@@ -49,6 +53,16 @@ angular.module('app')
 
 .controller('newPostCtrl', function($scope, $http) {
     $scope.newBlog = function() {
+        // TODO: can you make the Blog Date default to "now"?
+        
+        /**
+         * The ambiguous nature of the date field can be confusing. What exactly 
+         *  are you looking for there? MM/DD/YYYY? YYYY-MM-DD HH:MM:SS?
+         * 
+         * You might look into a datepicker (there are some Bootstrap plugins
+         * that work pretty well) instead of a simple text field if you want
+         *  to put this into production at some point.
+         */
         $http.post('/api/blog/', $scope.blog)
             .then(function(data) {
                 $scope.blog = data.data;

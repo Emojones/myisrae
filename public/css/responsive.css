@@ -17,6 +17,8 @@
   }
 
   /* The navbar becomes detached from the top, so we round the corners */
+
+  /** NOTE: I don't get this, it's still attached to the top of the window **/
   .navbar-wrapper .navbar {
     border-radius: 4px;
   }
